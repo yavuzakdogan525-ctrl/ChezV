@@ -368,3 +368,6 @@ html,body{
   .about-title{    font-size: 26px; }
   .hero h1{        font-size: 40px; }
 }
+@media (max-width:768px){
+  html, body{ overflow-x: clip; }
+}
