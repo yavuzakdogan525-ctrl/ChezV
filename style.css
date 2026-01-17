@@ -399,7 +399,7 @@ html,body{
 
   /* Logo bazen img, bazen a içinde img oluyor: ikisini de yakala */
   .header .logo{
-    height:72px !important;     /* ✅ LOGO BUYUDU */
+    height:720px !important;     /* ✅ LOGO BUYUDU */
     width:auto !important;
     max-width:none !important;
     flex:0 0 auto !important;
@@ -407,7 +407,7 @@ html,body{
   }
 
   .header .logo img{
-    height:72px !important;     /* ✅ eger logo img içerideyse */
+    height:720px !important;     /* ✅ eger logo img içerideyse */
     width:auto !important;
     max-width:none !important;
     display:block !important;
@@ -449,7 +449,7 @@ html,body{
 /* LOGO BÜYÜT */
 .header .logo,
 .header .logo img {
-  height: 72px !important;  /* LOGO daha büyük */
+  height: 720px !important;  /* LOGO daha büyük */
   width: auto !important;
   max-width: none !important;
 }
@@ -484,7 +484,7 @@ html,body{
   .header a.logo,
   .header .logo img,
   .header a.logo img{
-    height: 70px !important;      /* ✅ LOGO BUYUK */
+    height: 700px !important;      /* ✅ LOGO BUYUK */
     width: auto !important;
     max-width: none !important;
     display:block !important;
@@ -496,7 +496,7 @@ html,body{
 @media (max-width: 768px){
 
   .header{
-    height: 90px !important;
+    height: 700px !important;
     padding: 0 18px !important;      /* 40px telefonda sığmıyor */
     display: flex !important;
     align-items: center !important;
@@ -506,7 +506,7 @@ html,body{
 
   /* ✅ LOGO BUYUT */
   .header .logo{
-    height: 70px !important;          /* burayı 75 de yapabilirsin */
+    height: 700px !important;          /* burayı 75 de yapabilirsin */
     width: auto !important;
     max-width: none !important;
     object-fit: contain !important;
@@ -583,7 +583,7 @@ html,body{
 @media (max-width: 768px){
 
   header.header{
-    height: 90px !important;
+    height: 700px !important;
     padding: 0 18px !important;
     display:flex !important;
     align-items:center !important;
@@ -592,7 +592,7 @@ html,body{
   }
 
   header.header > img.logo{
-    height: 80px !important;   /* ✅ logo büyüsün */
+    height: 700px !important;   /* ✅ logo büyüsün */
     width: auto !important;
     max-width: none !important;
     object-fit: contain !important;
