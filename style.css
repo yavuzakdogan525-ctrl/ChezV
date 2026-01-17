@@ -436,3 +436,34 @@ html,body{
   .menu{ gap:16px !important; }
   .menu a{ font-size:14px !important; }
 }
+/* --- HEADER LOGO BUYUT VE TEK SATIR (HER EKRAN) --- */
+.header{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important; /* asla alt satıra kayma */
+  padding: 0 40px !important;
+  height: 90px !important;
+}
+
+/* LOGO BÜYÜT */
+.header .logo,
+.header .logo img {
+  height: 72px !important;  /* LOGO daha büyük */
+  width: auto !important;
+  max-width: none !important;
+}
+
+/* MENÜ TEK SATIRDA */
+.menu{
+  display: flex !important;
+  gap: 30px !important;
+  flex-wrap: nowrap !important; /* sarma yok */
+  justify-content: flex-end !important;
+}
+
+/* Menü yazıları */
+.menu a{
+  font-size: 16px !important;
+  white-space: nowrap !important;
+}
