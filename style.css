@@ -347,3 +347,24 @@ html,body{
   .hero{ padding-top:70px; }
   .hero h1{ font-size:40px; }
 }
+/* ===== MOBILE TEXT OVERFLOW FIX ===== */
+@media (max-width:768px){
+
+  /* uzun başlıklar taşmasın */
+  .about-title,
+  .products-title,
+  .contact-title,
+  .hero h1{
+    max-width: 100%;
+    padding: 0 12px;
+    letter-spacing: 3px;      /* 6px mobilde fazla */
+    word-break: break-word;   /* taşmayı kır */
+    overflow-wrap: anywhere;
+    text-align:center;
+  }
+
+  .products-title{ font-size: 26px; }
+  .contact-title{  font-size: 26px; }
+  .about-title{    font-size: 26px; }
+  .hero h1{        font-size: 40px; }
+}
