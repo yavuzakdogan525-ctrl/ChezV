@@ -35,8 +35,8 @@ html,body{
 
 .logo{
   height:500px;
-  width:auto;
-  max-width:160px;
+  width:350;
+  max-width:300px;
   object-fit:contain;
 }
 
