@@ -35,7 +35,7 @@ html,body{
 
 /* Header logosu: sadece burada kontrol */
 .header .logo{
-  height:60px;        /* ✅ logo büyük */
+  height:500px;        /* ✅ logo büyük */
   width:auto;
   display:block;
   object-fit:contain;
