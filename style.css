@@ -583,3 +583,31 @@ body{ padding-top:90px; }
 
   .hero{ min-height: calc(100svh - 70px); }
 }
+/* ===== ALTIN SARISI RENK SABİTLEME ===== */
+
+/* Menü yazıları */
+.menu a{
+  color: var(--gold) !important;
+}
+
+/* Hover rengi (istersen biraz açık ton) */
+.menu a:hover{
+  color: #ffd98a !important;
+}
+
+/* Hero buton / link */
+.btn{
+  color: var(--gold) !important;
+  border-color: var(--gold) !important;
+}
+
+.btn:hover{
+  background: var(--gold) !important;
+  color: #000 !important;
+}
+
+/* Genel link güvenliği (maviye dönmesin) */
+a{
+  color: var(--gold);
+  text-decoration: none;
+}
