@@ -157,6 +157,20 @@ html, body{
   0%{ transform: rotate(-1.5deg); }
   50%{ transform: rotate(1.5deg); }
   100%{ transform: rotate(-1.5deg); }
+  .chandelier-group{
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  width: 100vw !important;
+  z-index: 999999 !important;
+  .chandelier-group{
+  display: flex !important;
+  justify-content: center !important;
+  gap: clamp(80px, 12vw, 220px) !important;
+  align-items: flex-start !important;
+}
+}
 }
  
 
