@@ -518,3 +518,24 @@ section.hero p{
 @media (max-width: 390px){
   .products-grid{ gap:12px !important; }
 }
+/* Avize scroll ile hareket etmesin, sadece sallansın */
+.chandelier-wrap{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.chandelier{
+  display:block;
+  transform-origin: top center;
+  animation: swing 3s ease-in-out infinite;
+}
+
+@keyframes swing{
+  0%   { transform: rotate(-2deg); }
+  50%  { transform: rotate(2deg); }
+  100% { transform: rotate(-2deg); }
+}
