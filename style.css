@@ -539,3 +539,27 @@ section.hero p{
   50%  { transform: rotate(2deg); }
   100% { transform: rotate(-2deg); }
 }
+.hero{ position: relative; overflow: hidden; }
+
+.chandelier-group{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.swing{
+  transform-origin: top center;
+  animation: swing 3s ease-in-out infinite;
+}
+
+@keyframes swing{
+  0% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+  100% { transform: rotate(-2deg); }
+}
