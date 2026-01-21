@@ -12,7 +12,10 @@
   font-family:'Poppins',sans-serif;
 }
 
+/* ✅ Body margin/padding sıfır + yatay taşma yok */
 html,body{
+  margin:0;
+  padding:0;
   background:var(--bg);
   color:var(--text);
   overflow-x:hidden;
@@ -46,12 +49,12 @@ header.header > img.logo{
 header.header > nav.menu{
   display:flex;
   align-items:center;
-  gap:30px;            /* SAKIN 300 yapma */
+  gap:30px;
   flex-wrap:nowrap;
   white-space:nowrap;
   flex:1 1 auto;
   justify-content:flex-end;
-  min-width:0;         /* kırpılmayı bitirir */
+  min-width:0;
 }
 
 header.header > nav.menu a{
@@ -67,7 +70,10 @@ header.header > nav.menu a:hover{ color:var(--gold); }
 section.hero{
   position:relative;
   height:100vh;
-  padding-top:90px; /* header boşluğu */
+
+  /* ✅ Header (90px) + Avize alanı (~90px) = 180px */
+  padding-top:180px;
+
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -79,7 +85,7 @@ section.hero{
 }
 
 section.hero h1{
-  font-size:64px;      /* ✅ dev E yok */
+  font-size:64px;
   letter-spacing:4px;
   position:relative;
   z-index:5;
@@ -108,66 +114,67 @@ section.hero p{
   color:#000;
 }
 
-/* ================= AVİZE (GERÇEKTEN SABİT + TAVANA DAYALI) ================= */
+/* ================= AVİZE (SABİT + HEADER'IN ALTINDA) ================= */
+/* ✅ Avizeler sabit kalsın, scroll'da hareket etmesin
+   ✅ Header ile çakışmasın diye top:90px (header yüksekliği) */
 
-html, body{
-  margin: 0;
-  padding: 0;
-}
-
-/* AVİZE GRUBU – SABİT */
 .chandelier-group{
-  position: fixed !important;   /* 🔒 SCROLL'DA KIPIRDAMAZ */
-  top: 0 !important;            /* 🔒 GERÇEK TAVAN */
-  left: 0 !important;
-  width: 100vw !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: flex-start !important;
-  gap: clamp(80px, 12vw, 220px);
-  pointer-events: none;
-  z-index: 999999;
+  position:fixed !important;
+  top:90px !important;                 /* ✅ tavana değil, header ALTINA */
+  left:0 !important;
+  width:100vw !important;
+
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  justify-content:center !important;
+  align-items:flex-start !important;
+
+  gap:clamp(80px, 12vw, 220px);
+  pointer-events:none;
+  z-index:999999;
 }
 
 /* HER AVİZE */
 .chandelier-group > .hang{
-  flex: 0 0 auto;
-  width: clamp(200px, 22vw, 280px);
+  flex:0 0 auto;
+  width:clamp(200px, 22vw, 280px);
 }
 
 /* GÖRSEL */
 .chandelier{
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  transform-origin: top center;
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  transform-origin:top center;
 }
 
 /* SALLANMA */
 .swing{
-  animation: swing 8s ease-in-out infinite;
-  will-change: transform;
+  animation:swing 8s ease-in-out infinite;
+  will-change:transform;
 }
 
 /* FARKLI RİTİMLER */
-.hang:nth-child(1) .swing{ animation-duration: 9s; }
-.hang:nth-child(2) .swing{ animation-duration: 8s; }
-.hang:nth-child(3) .swing{ animation-duration: 9.5s; }
+.hang:nth-child(1) .swing{ animation-duration:9s; }
+.hang:nth-child(2) .swing{ animation-duration:8s; }
+.hang:nth-child(3) .swing{ animation-duration:9.5s; }
 
 /* SADECE ANİMASYON */
 @keyframes swing{
-  0%{ transform: rotate(-1.4deg); }
-  50%{ transform: rotate(1.4deg); }
-  100%{ transform: rotate(-1.4deg); }
+  0%{ transform:rotate(-1.4deg); }
+  50%{ transform:rotate(1.4deg); }
+  100%{ transform:rotate(-1.4deg); }
 }
 
 /* ================= SPARKLES ================= */
+/* ✅ Sparkles fixed kalsın ama avizeyi etkilemesin (optik kayma azalır) */
 .sparkles{
   position:fixed;
   inset:0;
   pointer-events:none;
-  z-index:2;
+  z-index:1;         /* ✅ avizeden ve içerikten daha altta */
   width:100%;
 }
 
@@ -234,6 +241,7 @@ html, body{
   margin-bottom:90px;
 }
 
+/* (Bu grid aşağıda Avizegunes tarzı ile override ediliyor) */
 .products-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -355,20 +363,16 @@ html, body{
 
   html, body{ width:100%; overflow-x:hidden; }
 
-  /* Header mobilde de tek satır kalsın */
   header.header{
     height:76px;
     padding:0 12px;
     gap:10px;
   }
 
-  /* ✅ mobilde logo büyük ama abartısız */
   header.header > img.logo{
     height:52px;
   }
 
-  /* ✅ mobilde 4 link yan yana görünsün:
-     sığmıyorsa yana doğru kaydırır (alta düşmez, kırpılmaz) */
   header.header > nav.menu{
     gap:18px;
     justify-content:flex-end;
@@ -382,9 +386,10 @@ html, body{
     font-size:15px;
   }
 
-  /* HERO: dev E yok */
+  /* ✅ Mobilde header 76px, avize de header altında:
+     hero boşluğu biraz daha az ama yeterli */
   section.hero{
-    padding-top:76px;
+    padding-top:160px; /* 76 header + ~84 avize */
   }
 
   section.hero h1{
@@ -397,19 +402,16 @@ html, body{
 
   section.hero p{ padding:0 12px; }
 
-  /* Section paddingleri mobilde taşmasın */
   .about-video,
   .products-area,
   .contact-area{
     padding:100px 16px;
   }
 
-  /* Grid tek sütun */
   .products-grid{
     grid-template-columns:1fr;
   }
 
-  /* İletişim kartları */
   .contact-cards{
     flex-direction:column;
     align-items:center;
@@ -426,17 +428,22 @@ html, body{
     height:auto;
     display:block;
   }
+
+  /* ✅ Mobil header yüksekliği değiştiği için avizeyi de aşağı al */
+  .chandelier-group{
+    top:76px !important;
+  }
 }
+
 /* ==== AVIZEGUNES TARZI: URUNLER YAN YANA GRID ==== */
 .products-grid{
   display:grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important; /* PC: 4 yan yana */
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   gap:18px !important;
   max-width:1200px !important;
   margin:0 auto !important;
 }
 
-/* Kart sabit boyu kaldır (420px yüzünden kötü duruyor) */
 .product-item{
   height:auto !important;
   border-radius:14px !important;
@@ -444,28 +451,23 @@ html, body{
   border:1px solid rgba(255,255,255,0.12) !important;
 }
 
-/* Görsel düzeni */
 .product-item img{
   width:100% !important;
-  aspect-ratio: 1 / 1 !important;  /* avizegunes gibi kare kutular */
+  aspect-ratio: 1 / 1 !important;
   object-fit:cover !important;
   display:block !important;
 }
 
-/* Hover hafif zoom kalsın */
 .product-item:hover img{ transform:scale(1.06) !important; }
 
-/* Tablet: 3 */
 @media (max-width: 1024px){
   .products-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
 }
 
-/* Telefon: 2 yan yana */
 @media (max-width: 768px){
   .products-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 }
 
-/* Çok küçük telefon: yine 2 ama aralık biraz düşsün */
 @media (max-width: 390px){
   .products-grid{ gap:12px !important; }
 }
