@@ -109,7 +109,10 @@ section.hero p{
 }
 
 /* ================= AVİZE (SABİT + TAVANA DAYALI) ================= */
-
+html, body{
+  margin: 0;
+  padding: 0;
+}
 .chandelier-group{
   position: fixed;                 /* 🔒 SCROLL'DA SABİT */
   top: 0;                          /* 🔒 TAVANA DAYALI */
