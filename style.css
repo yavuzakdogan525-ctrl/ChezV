@@ -633,6 +633,71 @@ section.hero p{
     section.hero{
       padding-top:160px !important;
     }
+/* ====== MOBİL ÇAKIŞMA FIX ====== */
+@media (max-width:768px){
+
+  /* Yazı grubu aşağı insin */
+  section.hero{
+    padding-top:200px !important;
+  }
+
+  section.hero h1{
+    margin-top:40px !important;
+  }
+
+  /* Avizeler biraz küçülsün */
+  .chandelier-group > .hang{
+    width: min(32vw, 140px) !important;
+  }
+
+}
+
+/* Çok küçük telefonlar (iPhone mini vs) */
+@media (max-width:420px){
+
+  section.hero{
+    padding-top:190px !important;
+  }
+
+  section.hero h1{
+    font-size:40px !important;
+  }
+
+  /* Sağdaki avizeyi gizle – çakışma %0 */
+  .chandelier-group > .hang:nth-child(3){
+    display:none !important;
+  /* ====== MOBİL ÇAKIŞMA FIX ====== */
+@media (max-width:768px){
+
+  /* Yazı grubu aşağı insin */
+  section.hero{
+    padding-top:200px !important;
+  }
+
+  section.hero h1{
+    margin-top:40px !important;
+  }
+
+  /* Avizeler biraz küçülsün */
+  .chandelier-group > .hang{
+    width: min(32vw, 140px) !important;
+  }
+
+}
+
+/* Çok küçük telefonlar (iPhone mini vs) */
+@media (max-width:420px){
+
+  section.hero{
+    padding-top:190px !important;
+  }
+
+  section.hero h1{
+    font-size:40px !important;
+  }
+
+  /* Sağdaki avizeyi gizle – çakışma %0 */
+  .chandelier-group > .hang:nth-child(3){
+    display:none !important;
   }
 }
-/* =================== MOBİL FIX (BİTTİ) =================== */
