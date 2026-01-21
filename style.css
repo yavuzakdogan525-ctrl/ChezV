@@ -108,69 +108,54 @@ section.hero p{
   color:#000;
 }
 
-/* ================= AVİZE ================= */
-
+/* ================= AVİZE (SABİT + TAVANA DAYALI) ================= */
 
 .chandelier-group{
-  position: fixed;                     /* parent’tan bağımsız */
-  top: 8vh;
+  position: fixed;                 /* 🔒 SCROLL'DA SABİT */
+  top: 0;                          /* 🔒 TAVANA DAYALI */
   left: 50%;
   transform: translateX(-50%);
   width: min(1200px, 96vw);
   display: flex !important;
   flex-direction: row !important;
-  flex-wrap: nowrap !important;        /* alt alta düşmesin */
+  flex-wrap: nowrap !important;
   justify-content: center !important;
   align-items: flex-start !important;
-  gap: clamp(70px, 10vw, 210px) !important;
+  gap: clamp(80px, 12vw, 220px);
   pointer-events: none;
   z-index: 99999;
 }
 
+/* HER AVİZE */
 .chandelier-group > .hang{
-  flex: 0 0 auto !important;           /* asla satır kırma */
-  width: clamp(190px, 20vw, 260px) !important;
-  height: auto;
+  flex: 0 0 auto;
+  width: clamp(200px, 22vw, 280px);
 }
 
-.chandelier-group .chandelier{
+/* GÖRSEL */
+.chandelier{
   display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
-  transform-origin: top center;
+  transform-origin: top center;   /* 🔑 tavandan sallansın */
 }
 
-/* sallanma img’de */
-.chandelier-group .swing{
+/* SALLANMA */
+.swing{
   animation: swing 7s ease-in-out infinite;
 }
 
-.chandelier-group > .hang:nth-child(1) .swing{ animation-duration: 8s; }
-.chandelier-group > .hang:nth-child(2) .swing{ animation-duration: 7s; }
-.chandelier-group > .hang:nth-child(3) .swing{ animation-duration: 8.5s; }
+.hang:nth-child(1) .swing{ animation-duration: 8s; }
+.hang:nth-child(2) .swing{ animation-duration: 7s; }
+.hang:nth-child(3) .swing{ animation-duration: 8.5s; }
 
 @keyframes swing{
   0%{ transform: rotate(-1.5deg); }
   50%{ transform: rotate(1.5deg); }
   100%{ transform: rotate(-1.5deg); }
-  /* ==== AVİZE KİLİT ==== */
-
-.chandelier-group{
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  justify-content: center !important;
-  align-items: flex-start !important;
-  gap: clamp(80px, 12vw, 220px) !important;
 }
-
-/* EN KRİTİK SATIR */
-.chandelier-group > .hang{
-  width: clamp(200px, 22vw, 280px) !important;
-  flex: 0 0 auto !important;
-}
-}
+ 
 
 
 /* ================= SPARKLES ================= */
