@@ -91,28 +91,7 @@ html,body{
   color:#000;
 }
 
-/* ===== AVİZE ===== */
-.chandelier{
-  position:absolute;
-  top:-40px;
-  left:50%;
-  width:340px;
-  max-width:70vw;
-  height:auto;
 
-  transform:translateX(-50%);
-  transform-origin:top center;
-
-  animation:swing 3.2s ease-in-out infinite;
-  z-index:2;
-  pointer-events:none;
-}
-
-@keyframes swing{
-  0%   { transform:translateX(-50%) rotate(-2deg); }
-  50%  { transform:translateX(-50%) rotate(2deg); }
-  100% { transform:translateX(-50%) rotate(-2deg); }
-}
 
 /* ===== MOBİL ===== */
 @media (max-width:768px){
