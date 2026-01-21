@@ -129,18 +129,42 @@ section.hero p{
   z-index: 999999;
   /* ================= AVİZE (TAM SABİT – HAREKET YOK) ================= */
 
+/* ================= AVİZE (TAM SABİT – HAREKET YOK) ================= */
+
+/* Header sabit olduğu için ölçü */
+:root{
+  --header-height: 90px;
+}
+
+/* AVİZE GRUBU */
 .chandelier-group{
-  position: fixed;        /* scroll’dan bağımsız */
-  top: 90px;              /* header altı */
+  position: fixed;                 /* SCROLL'DAN BAĞIMSIZ */
+  top: var(--header-height);       /* HEADER'IN ALTINA SABİT */
   left: 0;
   width: 100vw;
 
   display: flex;
   justify-content: center;
-  gap: 120px;
+  align-items: flex-start;
+  gap: 120px;                      /* AVİZELER ARASI MESAFE */
 
   pointer-events: none;
   z-index: 999999;
+}
+
+/* HER AVİZE KUTUSU */
+.chandelier-group > .hang{
+  flex: 0 0 auto;
+  width: clamp(200px, 22vw, 280px);
+}
+
+/* GÖRSEL – HİÇBİR ANİMASYON / TRANSFORM YOK */
+.chandelier{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 }
 
 /* HER AVİZE */
