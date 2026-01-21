@@ -87,13 +87,7 @@ html,body{
   justify-content:space-between;
   padding:0 40px;
   z-index:1000;
-}
- .logo{
-  height:60px;
-  width:auto;
-  display:block;
-  object-fit:contain;
-}
+
 }
 
 .menu a{
@@ -735,5 +729,41 @@ header.header .menu{
   header.header .menu a{
     flex:0 0 auto;
     white-space:nowrap;
+  }
+}
+/* ====== HEADER + MENÜ SAĞA YASLA (GARANTİ) ====== */
+.header{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important; /* soldan başla */
+}
+
+.logo{
+  flex:0 0 auto !important;  /* logo sabit */
+}
+
+/* menü kesin sağa */
+.menu{
+  margin-left:auto !important;
+  display:flex !important;
+  justify-content:flex-end !important;
+  align-items:center !important;
+  gap:24px !important;
+  width:auto !important;
+  text-align:right !important;
+}
+
+/* mobilde taşarsa yana kaydır, alt alta düşmesin */
+@media (max-width:768px){
+  .menu{
+    flex-wrap:nowrap !important;
+    overflow-x:auto !important;
+    white-space:nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    gap:14px !important;
+  }
+  .menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
   }
 }
