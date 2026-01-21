@@ -127,6 +127,35 @@ section.hero p{
 
   pointer-events: none;
   z-index: 999999;
+  /* ================= AVİZE (TAM SABİT – HAREKET YOK) ================= */
+
+.chandelier-group{
+  position: fixed;        /* scroll’dan bağımsız */
+  top: 90px;              /* header altı */
+  left: 0;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+
+  pointer-events: none;
+  z-index: 999999;
+}
+
+/* HER AVİZE */
+.chandelier-group > .hang{
+  flex: 0 0 auto;
+  width: clamp(200px, 22vw, 280px);
+}
+
+/* GÖRSEL – HİÇBİR TRANSFORM / ANİMASYON YOK */
+.chandelier{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 }
 
 /* HER AVİZE */
