@@ -767,3 +767,29 @@ header.header .menu{
     white-space:nowrap !important;
   }
 }
+@media (max-width: 768px) {
+
+  header.header{
+    height: 120px;          /* 👉 üst alanı büyüttük */
+    padding: 20px 16px;     /* 👉 nefes aldırdık */
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  header.header .menu{
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;       /* 👉 yazılar alt satıra geçebilir */
+    justify-content: center;
+    gap: 12px;
+  }
+
+  header.header .menu a{
+    font-size: 14px;
+    white-space: nowrap;   /* 👉 kelime bölünmez */
+  }
+
+}
+.hero{
+  padding-top: 140px;   /* 👉 header kadar boşluk */
+}
