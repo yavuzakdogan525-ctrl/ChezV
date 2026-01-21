@@ -703,3 +703,37 @@ a{
   }
 
 }
+/* ✅ MENÜYÜ HER YERDE SAĞA YASLA */
+header.header{
+  display:flex;
+  align-items:center;
+}
+
+/* logo solda kalsın, menü sağa gitsin */
+header.header .menu{
+  margin-left:auto;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:22px;
+  text-align:right;
+}
+
+/* mobilde de aynı mantık + taşarsa yana kaydır */
+@media (max-width: 768px){
+  header.header{
+    padding:0 16px; /* istersen 12-20 arası oynat */
+  }
+
+  header.header .menu{
+    gap:14px;
+    overflow-x:auto;
+    white-space:nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  header.header .menu a{
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+}
