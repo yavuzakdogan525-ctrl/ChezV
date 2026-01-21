@@ -147,8 +147,23 @@ section.hero p{
   height: auto;
 }
 
-.hang.main .chandelier{
-  width: clamp(180px, 32vw, 320px);
+/* Hepsi aynı boy + aynı hiza */
+:root{
+  --avize-box: clamp(170px, 24vw, 240px); /* burayı büyüt/küçült */
+}
+
+.hang{
+  top: 0;                /* hepsi aynı hizada başlasın */
+  width: var(--avize-box);
+  height: var(--avize-box);
+}
+
+.chandelier{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* taşmadan sığdır */
+  display: block;
+}
 }
 
 @keyframes swing{
