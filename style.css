@@ -115,24 +115,18 @@ section.hero p{
 }
 
 /* ================= AVİZE (SABİT + HEADER'IN ALTINDA) ================= */
-/* ✅ Avizeler sabit kalsın, scroll'da hareket etmesin
-   ✅ Header ile çakışmasın diye top:90px (header yüksekliği) */
-
 .chandelier-group{
-  position:fixed !important;
-  top:90px !important;                 /* ✅ tavana değil, header ALTINA */
-  left:0 !important;
-  width:100vw !important;
+  position: fixed;     /* 🔒 SABİT */
+  top: 90px;           /* header altı (header yoksa 0 yap) */
+  left: 0;
+  width: 100vw;
 
-  display:flex !important;
-  flex-direction:row !important;
-  flex-wrap:nowrap !important;
-  justify-content:center !important;
-  align-items:flex-start !important;
+  display: flex;
+  justify-content: center;
+  gap: 120px;
 
-  gap:clamp(80px, 12vw, 220px);
-  pointer-events:none;
-  z-index:999999;
+  pointer-events: none;
+  z-index: 999999;
 }
 
 /* HER AVİZE */
