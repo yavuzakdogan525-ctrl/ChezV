@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>CHEZV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ✨ PARILTI -->
+<div class="sparkles">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <img src="logo.png" alt="CHEZV Logo" class="logo">
+
+  <nav class="menu">
+    <a href="#home">Anasayfa</a>
+    <a href="#about">Hakkımızda</a>
+    <a href="#products">Çalışmalarımız</a>
+    <a href="#contact">İletişim</a>
+  </nav>
+</header>
+
+<!-- HERO / HOME -->
+<section id="home" class="hero">
+
+  <!-- ✅ AVİZE (SALLANAN) -->
+  <img src="avize.png" class="chandelier" alt="Avize">
+
+
+  <h1>CHEZV</h1>
+  <p>Minimal • Modern • Şık</p>
+  <a href="#products" class="btn">Keşfet</a>
+
+</section>
+
+<!-- HAKKIMIZDA -->
+<section id="about" class="about-video">
+  <h2 class="about-title">HAKKIMIZDA</h2>
+
+  <div class="about-video-wrapper">
+    <video
+      id="aboutVideo"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+    >
+      <source src="videos/hakkimizda.mp4" type="video/mp4">
+      Tarayıcınız video etiketini desteklemiyor.
+    </video>
+
+    <div class="video-note">Üzerine gelince sesi açılır</div>
+  </div>
+</section>
+
+<!-- ÇALIŞMALARIMIZ -->
+<section id="products" class="products-area">
+  <h2 class="products-title">ÇALIŞMALARIMIZ</h2>
+
+  <div class="products-grid">
+    <div class="product-item"><img src="images/calısma1.png" alt="Çalışma 1" loading="lazy"></div>
+    <div class="product-item"><img src="images/calısma2.png" alt="Çalışma 2" loading="lazy"></div>
+    <div class="product-item"><img src="images/calısma3.png" alt="Çalışma 3" loading="lazy"></div>
+    <div class="product-item"><img src="images/calısma4.png" alt="Çalışma 4" loading="lazy"></div>
+    <div class="product-item"><img src="images/calısma5.png" alt="Çalışma 5" loading="lazy"></div>
+    <div class="product-item"><img src="images/calısma6.png" alt="Çalışma 6" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" id="lightboxImg" alt="">
+</div>
+
+<!-- İLETİŞİM -->
+<section id="contact" class="contact-area">
+  <h2 class="contact-title">İLETİŞİM</h2>
+
+  <div class="contact-cards">
+
+    <div class="contact-card">
+      <h3>OFİS BİLGİSİ</h3>
+      <p>📍 Yenimahalle, 3068. Sk. No: 1/1<br>55200 Atakum / Samsun</p>
+      <p>📞 0531 301 22 22</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>ÇALIŞMA SAATLERİMİZ</h3>
+      <p>Hafta İçi 10:00 – 19:30</p>
+      <p>Cumartesi 10:00 – 19:30</p>
+      <p>Pazar 12:00 – 19:30</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>SOSYAL MEDYAMIZ</h3>
+      <div class="contact-social">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-tiktok"></i>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- JS -->
+<script>
+  // Video hover ile ses aç/kapat
+  const video = document.getElementById('aboutVideo');
+  video.addEventListener('mouseenter', () => video.muted = false);
+  video.addEventListener('mouseleave', () => video.muted = true);
+
+  // Lightbox
+  const items = document.querySelectorAll('.product-item img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  items.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.classList.add('active');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "Görsel";
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  // Dışarı tıklayınca kapat
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  // ESC ile kapat
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>
