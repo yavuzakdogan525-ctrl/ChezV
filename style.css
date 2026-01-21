@@ -109,22 +109,76 @@ section.hero p{
 }
 
 /* ================= AVİZE ================= */
+/* ================= AVİZE ================= */
+:root{
+  --avize-size: clamp(180px, 22vw, 260px);  /* hepsi aynı boy */
+  --gap: 34vw;                               /* ayrılma mesafesi (BÜYÜTTÜM) */
+  --top-main: 7vh;                           /* ortanın asılma yüksekliği */
+  --top-side: 6vh;                           /* yanların asılma yüksekliği */
+}
 
-<div class="chandelier-group">
+.chandelier-group{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 480px;
+  pointer-events: none;
+  z-index: 2;
+}
 
-  <div class="hang left">
-    <img src="images/avize-sol.png" class="chandelier swing" alt="">
-  </div>
+/* KONUM (translate burada kalacak, animasyon YOK) */
+.hang{
+  position: absolute;
+  width: var(--avize-size);
+  height: var(--avize-size);
+}
 
-  <div class="hang main">
-    <img src="images/avize.png" class="chandelier swing" alt="">
-  </div>
+/* Ortadaki gerçekten ortada */
+.hang.main{
+  left: 50%;
+  top: var(--top-main);
+  transform: translateX(-50%);
+}
 
-  <div class="hang right">
-    <img src="images/avize-sag.png" class="chandelier swing" alt="">
-  </div>
+/* Sol / Sağ: merkezden eşit uzaklık */
+.hang.left{
+  left: 50%;
+  top: var(--top-side);
+  transform: translateX(-50%) translateX(calc(-1 * var(--gap)));
+}
 
-</div>
+.hang.right{
+  left: 50%;
+  top: var(--top-side);
+  transform: translateX(-50%) translateX(var(--gap));
+}
+
+/* GÖRSEL */
+.chandelier{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transform-origin: top center;
+}
+
+/* SALLANMA SADECE IMG’DE */
+.swing{
+  animation: swing 7s ease-in-out infinite;
+}
+
+/* Ufak farklı ritimler (daha doğal) */
+.hang.left .swing{ animation-duration: 8.2s; }
+.hang.main .swing{ animation-duration: 7.4s; }
+.hang.right .swing{ animation-duration: 8.6s; }
+
+@keyframes swing{
+  0%{ transform: rotate(-1.5deg); }
+  50%{ transform: rotate(1.5deg); }
+  100%{ transform: rotate(-1.5deg); }
+}
+
 /* ================= SPARKLES ================= */
 .sparkles{
   position:fixed;
