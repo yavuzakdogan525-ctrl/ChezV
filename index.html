@@ -18,11 +18,48 @@
   <!-- KARARTI -->
   <div class="hero-overlay"></div>
 
-  <!-- SENİN SABİT YAZIN -->
+<section class="hero" id="home">
+
+  <!-- KAYAN ARKAPLAN -->
+  <div class="hero-bg">
+    <div class="bg-slide active"></div>
+    <div class="bg-slide"></div>
+    <div class="bg-slide"></div>
+    <div class="bg-slide"></div>
+    <div class="bg-slide"></div>
+    <div class="bg-slide"></div>
+    <div class="bg-slide"></div>
+    <div class="bg-slide"></div>
+    <div class="bg-slide"></div>
+  </div>
+
+  <!-- KARARTI -->
+  <div class="hero-overlay"></div>
+
+  <!-- SABİT YAZI -->
   <div class="hero-content">
     <h1>CHEZV</h1>
     <p>Minimal • Modern • Şık</p>
     <a href="#products" class="btn">Keşfet</a>
+  </div>
+
+</section>
+
+<!-- ✅ EN ALTA (</body> öncesi) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".bg-slide");
+  let index = 0;
+
+  if (slides.length === 0) return;
+
+  setInterval(function () {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 2000);
+});
+</script>
   </div>
 
 </section>
