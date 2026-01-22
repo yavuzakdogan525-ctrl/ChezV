@@ -493,3 +493,72 @@ html, body {
 @media(max-width:768px){
   .hero-content h1{ font-size: 36px; }
 }
+html, body{
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+}
+
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+
+.bg-slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  background-size:cover;
+  background-position:center;
+  transition:opacity 1s ease-in-out;
+}
+
+.bg-slide.active{
+  opacity:1;
+}
+
+/* 9 RESİMİN YOLU (isimleri bg1.jpg...bg9.jpg olmalı) */
+.bg-slide:nth-child(1){ background-image:url("images/bg1.jpg"); }
+.bg-slide:nth-child(2){ background-image:url("images/bg2.jpg"); }
+.bg-slide:nth-child(3){ background-image:url("images/bg3.jpg"); }
+.bg-slide:nth-child(4){ background-image:url("images/bg4.jpg"); }
+.bg-slide:nth-child(5){ background-image:url("images/bg5.jpg"); }
+.bg-slide:nth-child(6){ background-image:url("images/bg6.jpg"); }
+.bg-slide:nth-child(7){ background-image:url("images/bg7.jpg"); }
+.bg-slide:nth-child(8){ background-image:url("images/bg8.jpg"); }
+.bg-slide:nth-child(9){ background-image:url("images/bg9.jpg"); }
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  z-index:1;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero-content h1{
+  font-size:64px;
+  letter-spacing:6px;
+}
+
+@media(max-width:768px){
+  .hero-content h1{ font-size:36px; }
+}
